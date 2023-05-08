@@ -4,4 +4,5 @@ Proje Adı : Ürün Satış Portalı
 Amaç : Uygulama , çeşitli ürünlerin satışını yapmak amacıyla kurulmuş bir internet platformudur. Bu portal, ürünlerin çeşitli kategoriler halinde listelendiği ve müşterilerin ürünleri arama, inceleme ve satın alma işlemlerini gerçekleştirdiği bir elektronik ticaret platformudur.
 
 
-![alt text](https://github.com/Sezer630/E-Commerce/blob/master/%C5%9Eema.JPG?raw=true)
+
+![Şema](https://user-images.githubusercontent.com/117120450/236837268-e4bebc04-7e81-40c4-b1f7-a8e5a4a671a2.JPG)
