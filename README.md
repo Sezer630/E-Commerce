@@ -1,2 +1,2 @@
 # E-Commerce
-![alt text](https://github.com/Sezer630/E-Commerce/blob/master/Veri%20TABANI%20%C5%9EEMASI.JPG?raw=true)
+![alt text](https://github.com/Sezer630/E-Commerce/blob/master/%C5%9Eema.JPG?raw=true)
