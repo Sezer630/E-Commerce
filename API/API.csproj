@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
       <PrivateAssets>all</PrivateAssets>
@@ -24,6 +25,13 @@
   <ItemGroup>
     <ProjectReference Include="..\API.Core\API.Core.csproj" />
     <ProjectReference Include="..\API.Infrastructure\API.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\products\a1.png" />
+    <None Include="wwwroot\images\products\d1.jpg" />
+    <None Include="wwwroot\images\products\p1.png" />
+    <None Include="wwwroot\images\products\z1.png" />
   </ItemGroup>
 
 
