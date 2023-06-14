@@ -1,6 +1,6 @@
-﻿namespace API.Core.DbModels.Identity
+﻿namespace API.Dtos
 {
-    public class Adress : BaseEntity
+    public class AddressDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -8,7 +8,5 @@
         public string City { get; set; }
         public string State { get; set; }
         public string ZipCode { get; set; }
-        public string AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
     }
 }

@@ -28,38 +28,35 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
-            services.AddDbContext<StoreContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddSingleton<IConnectionMultiplexer>(x=> 
+            services.AddDbContext<StoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddSingleton<IConnectionMultiplexer>(x =>
             {
                 var configuration = ConfigurationOptions.Parse(Configuration.GetConnectionString("Redis"), true);
                 return ConnectionMultiplexer.Connect(configuration);
             });
+
             services.AddApplicationService();
+            services.AddIdentityServices(Configuration);
             services.AddSwaggerDocumentation();
-            services.AddCors(opt => 
+            services.AddCors(opt =>
             {
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200");
-
                 });
             });
-
-
-
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // if (env.IsDevelopment())
+            //if (env.IsDevelopment())
             //{
-            //  app.UseDeveloperExceptionPage();
+            //    app.UseDeveloperExceptionPage();
             //}
             app.UseMiddleware<ExceptionMiddleware>();
             app.UseStatusCodePagesWithReExecute("/error/{0}");
@@ -70,15 +67,10 @@ namespace API
 
             app.UseCors("CorsPolicy");
 
-
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseSwagger();
             app.UseSwaggerDocumentation();
-
-
-
 
             app.UseEndpoints(endpoints =>
             {
