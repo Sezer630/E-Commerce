@@ -12,7 +12,7 @@ namespace API.Infrastructure.Data.Config
         public void Configure(EntityTypeBuilder<DeliveryMethod> builder)
         {
             builder.Property(i => i.Price)
-                .HasColumnType("decimal(18,2)");
+                  .HasColumnType("decimal(18,2)");
         }
     }
 }

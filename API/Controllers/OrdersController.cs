@@ -14,8 +14,6 @@ namespace API.Controllers
     [Authorize]
     public class OrdersController : BaseApiController
     {
-        
-        
         private readonly IOrderService _orderService;
         private readonly IMapper _mapper;
 
@@ -63,5 +61,5 @@ namespace API.Controllers
             return Ok(await _orderService.GetDeliveryMethodAsync());
         }
     }
-    }
+}
 

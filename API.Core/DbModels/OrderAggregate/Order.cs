@@ -27,10 +27,7 @@ namespace API.Core.DbModels.OrderAggregate
         public Address ShiptToAddress { get; set; }
         public DeliveryMethod DeliveryMethod { get; set; }
         public IReadOnlyList<OrderItem> OrderItems { get; set; }
-
-        [Column(TypeName = "decimal(18,2)")]
         public decimal SubTotal { get; set; }
-
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
         public string PaymentIntentId { get; set; }
 

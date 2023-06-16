@@ -28,4 +28,3 @@ export class CheckoutDeliveryComponent implements OnInit {
   }
 
 }
-

@@ -76,27 +76,31 @@ export class CheckoutPaymentComponent implements AfterViewInit {
     const orderToCreate = this.getOrderToCreate(basket);
     this.checkoutService.createOrder(orderToCreate).subscribe(
       (order: IOrder) => {
-        this.stripe.confirmCardPayment(basket.clientSecret,{
-          payment_method:{
-            card:this.cardNumber,
-            billing_details:{
-              name:this.checkoutForm.get('paymentForm').get('nameOnCard').value
+        this.stripe
+          .confirmCardPayment(basket.clientSecret, {
+            payment_method: {
+              card: this.cardNumber,
+              billing_details: {
+                name: this.checkoutForm.get('paymentForm').get('nameOnCard')
+                  .value,
+              },
+            },
+          })
+          .then((result) => {
+            if (result.paymentIntent) {
+              console.log(result);
+              this.basketService.deleteLocalBasket(basket.id);
+              this.toastr.success('Order Created Successfully');
+            } else {
+              this.toastr.error('Payment error');
             }
-          }
-        }).then(result=>{
-          console.log(result);
-          if(result.paymentIntent){
-            this.basketService.deleteLocalBasket(basket.id);
-            this.toastr.success('Order created successfully');
-          }else{
-            this.toastr.error('Payment error');
-          }
-        });
+          });
+
         console.log(order);
       },
       (error) => {
-        this.toastr.error(error.message);
         console.log(error);
+        this.toastr.error(error.message);
       }
     );
   }
