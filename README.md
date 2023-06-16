@@ -5,4 +5,5 @@ Amaç : Uygulama , çeşitli ürünlerin satışını yapmak amacıyla kurulmuş
 
 
 
-![Şema](https://user-images.githubusercontent.com/117120450/236837268-e4bebc04-7e81-40c4-b1f7-a8e5a4a671a2.JPG)
+
+![asd84as98d4689as4d86as4d896as4d](https://github.com/Sezer630/E-Commerce/assets/117120450/1f4e17cf-b9f4-4443-9ac2-63ef91194d89)
