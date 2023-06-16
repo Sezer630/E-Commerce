@@ -63,7 +63,7 @@ namespace API.Controllers
 
             //return  await _productRepository.GetEntityWhitSpec(spec);
 
-            var product = await _productRepository.GetEntityWhitSpec(spec);
+            var product = await _productRepository.GetEntityWithSpec(spec);
             //  return new ProductToReturnDto
             //  {
             //      Id = product.Id,

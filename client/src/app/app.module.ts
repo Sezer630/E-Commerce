@@ -14,6 +14,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import {  NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JWTInterceptor } from './core/interceptors/cwt.interceptors';
 
 
 
@@ -41,7 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true},
-    {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor, multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor, multi:true},
+    {provide:HTTP_INTERCEPTORS, useClass:JWTInterceptor, multi:true}
     
     
   ],
